@@ -37,7 +37,15 @@ public class MainActivity extends ActionBarActivity {
     }   // onCreate
 
     public void clickMove(View view) {
+
+        double douMyLat = Double.parseDouble(txtLat.getText().toString());
+        double douMyLong = Double.parseDouble(txtLon.getText().toString());
+
+        Log.d("test", "Latitute = " + Double.toString(douMyLat));
+
         Intent objIntent = new Intent(MainActivity.this, MapsActivity.class);
+        objIntent.putExtra("myLat", douMyLat);
+        objIntent.putExtra("myLong", douMyLong);
         startActivity(objIntent);
     }
 
